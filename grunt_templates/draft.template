@@ -1,0 +1,14 @@
+---
+comments : true
+date     : <%= grunt.template.today('yyyy-mm-dd hh:MM:ss') %>
+layout   : post
+slug     : <%= slug %>
+title    : <%= title %>
+summary  : 
+image    : 
+category : # One of Tech-stuff, Learning, Random
+tags     : # common: jekyll, webdev, rcstuff
+- 
+---
+
+# Heading 1

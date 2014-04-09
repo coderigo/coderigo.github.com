@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-sm-12">
+        <ul class="nav nav-tabs nav-justified">
+            {% for link in site.navigation %}
+                {% assign active = nil %}
+                {% if page.url == link.url %}
+                    {% assign active = 'active' %}
+                {% endif %}
+                <li class="{{ active }}">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        {% if page.url contains 'index.html' and page.url != 'index.html' %}
+            {% include divider_invisible.html %}
+            {% include mugshot.html %}
+        {% else %}
+            {% include divider.html %}
+        {% endif %}
+    </div>
+</div>

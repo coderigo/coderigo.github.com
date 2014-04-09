@@ -1,0 +1,45 @@
+markdown : redcarpet
+pygments : true
+
+exclude : [node_modules, Gruntfile.js, package.json, grunt_templates]
+
+title : Rodrigo Martell
+
+url : http://www.rodrigomartell.com
+
+permalink : /:year/:month/:day/:title/
+
+author :
+    name     : Rodrigo Martell
+    email    : rodrigo.martell@gmail.com
+    github   : coderigo
+    gravatar : http://www.gravatar.com/avatar/e7f2aaa0cd976fd7a896c0684f49cba0.png
+
+comments:
+    provider : disqus
+    disqus   :
+        short_name : coderigo
+
+analytics:
+    provider : google 
+    google   : 
+        tracking_id : 'UA-18015420-1'
+        domain      : 'rodrigomartell.com'
+
+categories :
+    - Tech-stuff
+    - Learning
+    - Random
+
+navigation :
+    - title : '<span class="text-muted">$ </span> whoami'
+      url   : '/index.html'
+    - title : 'Tech-stuff'
+      url   : '/tech_stuff/index.html'
+    - title : 'Learning'
+      url   : '/learning/index.html'
+    - title : 'Random'
+      url   : '/random/index.html'
+
+redcarpet:
+    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]

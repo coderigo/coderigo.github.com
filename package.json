@@ -1,0 +1,20 @@
+{
+  "name": "blogrigo",
+  "version": "0.0.0",
+  "description": "\"Rodrigo Martell Blog\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rodrigo Martell",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "grunt-shell": "~0.6.4",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt": "~0.4.4",
+    "grunt-contrib-connect": "~0.7.1",
+    "snake-case": "0.0.2",
+    "grunt-template": "~0.2.3",
+    "grunt-text-replace": "~0.3.11"
+  }
+}
