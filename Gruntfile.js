@@ -41,7 +41,8 @@ module.exports = function(grunt){
                 'random/**',
                 '_config.yml',
                 'index.html',
-                'css/**'
+                'css/**',
+                'img/**/**/**'
             ],
             tasks : ['shell:jekyllBuild']
         },
@@ -116,6 +117,14 @@ module.exports = function(grunt){
      */
     grunt.registerTask('default', ['startServer']);
 
+    /**
+     * Make image directory for post
+     * @param  {[string]} postTitle Spine-cased title of post
+     */
+    grunt.registerTask('makeImgDir', function(spineCasePostTitle){
+        grunt.file.mkdir('img/posts/'+spineCasePostTitle);
+    });
+
 
     /**
      * Create a Jekyll draft post
@@ -176,10 +185,12 @@ module.exports = function(grunt){
      */
     grunt.registerTask('post', function(postTitle, startServer){
 
-        grunt.config('template.makePost', makeTemplateConfig(postTitle, false));
+        var templateConfig = makeTemplateConfig(postTitle, false);
+
+        grunt.config('template.makePost', templateConfig);
 
         // Run grunt-template task with above configuration
-        grunt.task.run(['template']);
+        grunt.task.run(['template','makeImgDir:'+templateConfig.slug]);
 
         if (startServer){
             grunt.task.run('startServer');

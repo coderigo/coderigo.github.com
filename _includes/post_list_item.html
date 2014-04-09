@@ -1,0 +1,24 @@
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 text-center">
+                  <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                  <h2>
+                      <small>{{ post.summary }}</small>
+                  </h2>
+                  <span class="text-muted">
+                      <small>{{ post.date | date: "%B %e, %Y" }}</small>
+                  </span>
+                  <ul class="list-inline">
+                    {% for tag in post.tags %}
+                      <li>
+                        <span class="label"><a class="tag-link" href="/tags/{{ tag }}" rel="tooltip" title="{{ tag }} posts"><i class="fa fa-tag"></i> {{ tag }}</a></span>
+                      </li>
+                    {% endfor %}
+                  </ul>
+
+                  {% if post.image %}
+                    <img src="/img/posts/{{ post.image }}" alt="Post image" class="img-responsive center-block">
+                  {% endif %}
+                </div>
+            </div>
+
+            {% include divider_invisible.html %}
