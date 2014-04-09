@@ -125,7 +125,6 @@ module.exports = function(grunt){
         grunt.file.mkdir('img/posts/'+spineCasePostTitle);
     });
 
-
     /**
      * Create a Jekyll draft post
      * @param  {[string]} postTitle Title of post
@@ -138,6 +137,7 @@ module.exports = function(grunt){
 
         grunt.task.run([
             'template',
+            'makeImgDir:'+templateConfig.slug,
             'shell:openInSublime:'+templateConfig.postPath
         ]);
 
@@ -190,7 +190,11 @@ module.exports = function(grunt){
         grunt.config('template.makePost', templateConfig);
 
         // Run grunt-template task with above configuration
-        grunt.task.run(['template','makeImgDir:'+templateConfig.slug]);
+        grunt.task.run([
+            'template',
+            'makeImgDir:'+templateConfig.slug,
+            'shell:openInSublime:'+templateConfig.postPath
+        ]);
 
         if (startServer){
             grunt.task.run('startServer');
