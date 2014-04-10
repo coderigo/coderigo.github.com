@@ -5,10 +5,12 @@ layout   : post
 slug     : <%= slug %>
 title    : <%= title %>
 summary  : 
-image    : 
+image    : '<%= slug %>/<%= slug %>.png'
 category : # One of Tech-stuff, Learning, Random
 tags     : # common: jekyll, webdev, rcstuff
 - 
 ---
 
 # Heading 1
+
+![altTextHere](/img/posts/<%= slug %>/<%= slug %>.png "Image description")

@@ -137,7 +137,7 @@ module.exports = function(grunt){
 
         grunt.task.run([
             'template',
-            'makeImgDir:'+templateConfig.slug,
+            'makeImgDir:'+templateConfig.options.data.slug,
             'shell:openInSublime:'+templateConfig.postPath
         ]);
 
@@ -192,7 +192,7 @@ module.exports = function(grunt){
         // Run grunt-template task with above configuration
         grunt.task.run([
             'template',
-            'makeImgDir:'+templateConfig.slug,
+            'makeImgDir:'+templateConfig.options.data.slug,
             'shell:openInSublime:'+templateConfig.postPath
         ]);
 
