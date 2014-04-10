@@ -1,0 +1,25 @@
+<ul class="list-inline">
+<!-- Need to refactor this with nicer liquid usage -->
+{% if page.tags %} 
+    {% for tag in page.tags %}
+      <li>
+        <span class="label tag"><a class="tag-link" href="/tags/{{ tag }}" rel="tooltip" title="{{ tag }} posts"><i class="fa fa-tag"></i> {{ tag }}</a></span>
+      </li>
+    {% endfor %}
+{% elsif post.tags %}
+    {% for tag in post.tags %}
+      <li>
+        <span class="label tag"><a class="tag-link" href="/tags/{{ tag }}" rel="tooltip" title="{{ tag }} posts"><i class="fa fa-tag"></i> {{ tag }}</a></span>
+      </li>
+    {% endfor %}
+{% else %}
+    {% for tag in site.tags %}
+      <li>
+        <span class="label tag">
+          <a class="tag-link" href="/tags/{{ tag[0] }}" rel="tooltip" title="{{ tag[0] }} posts">{{ tag[0] }}</a>
+        </span>
+      </li>
+    {% endfor %}
+{% endif %}
+
+</ul>

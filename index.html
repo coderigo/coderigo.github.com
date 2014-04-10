@@ -18,17 +18,9 @@ title: "Rodrigo Martell"
 
 {% include divider.html %}
 
-<div class="row">
+<div class="row"> 
   <div class="text-center">
-    <ul class="list-inline">
-      {% for tag in site.tags %}
-        <li>
-          <span class="label">
-            <a class="tag-link" href="/tags/{{ tag[0] }}" rel="tooltip" title="{{ tag[0] }} posts">{{ tag[0] }}</a>
-          </span>
-        </li>
-      {% endfor %}
-    </ul>
+    {% include post_tags_ul.html %}
   </div>
 </div>
 
@@ -38,7 +30,9 @@ title: "Rodrigo Martell"
 
         <p>I have an interest in all things web, and spend every spare moment experimenting with anything new and interesting in this space with a view of applying it to my work or simply for fun.</p>
 
-        <p>An undergraduate degree in econometrics was followed by a strong interest in web application development.</br>A plate-full of self-teaching and a healthy dose of experimentation at every spare moment lead to a Master in IT and currently a PhD Comp, which I study part-time while holding down a full-time job as an economist/developer (more wearing the hat of the latter) at a small consulting firm.</p>
+        <p>An undergraduate degree in econometrics was followed by a strong interest in web application development.</p>
+
+        <p>A plate-full of self-teaching and a healthy dose of experimentation lead to a Master in IT and currently a PhD Comp, which I study part-time while holding down a full-time job as an economist/developer (more wearing the hat of the latter) at a small consulting firm.</p>
 
         <p>This blog is one of those written primarily for self-reference to record thoughts and impressions about things I come across, yet open to anyone who may find its content of any interest or use. It serves a secondary random stuff purpose for unrelated happenings in my life of little interest to anyone but myself and family or friends.</p>
 

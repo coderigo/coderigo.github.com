@@ -9,4 +9,11 @@ jQuery(document).ready(function() {
         element.target = '_blank';
       }
     });
+
+    // Center images within <p> elements created by markdown in posts
+    $('.post-body img').each(function(index, imgElement){
+      console.log($(imgElement).parent());
+      $(imgElement).parent().css('text-align','center');
+      // css('text-align','center');
+    })
 });
