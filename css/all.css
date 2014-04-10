@@ -2,4 +2,5 @@
 ---
 {% include css/bootstrap.min.css %}
 {% include css/solarized-dark.css %}
+{% include css/font-awesome-4.0.3/css/font-awesome.min.css %}
 {% include css/custom.css %}
