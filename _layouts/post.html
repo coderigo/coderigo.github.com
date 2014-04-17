@@ -16,12 +16,14 @@ layout: layout
         </h2>
         <div class="col-sm-12 text-center" style="margin-top: -25px;">
 
-            <h3 class="text-muted">
-                <small>{{ page.date | date: "%B %e, %Y" }}</small>
+            <h3 class="text-muted post-date-split">
+                <span>
+                    <small>{{ page.date | date: "%B %e, %Y" }}</small>
+                </span>
             </h3>
 
         </div>
-        {% include divider.html %}
+        <!-- {% include divider_invisible.html %} -->
         <ul class="list-inline share-links">
             <!-- Titter -->
             <li>
