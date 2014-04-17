@@ -12,7 +12,7 @@ tags     : # common: jekyll, webdev, rcstuff
 - webdev
 ---
 
-For a few years I've been using Cooatech's [PathFinder][1] app as a replacement for OSX's Finder app, which falls short at times for my needs.
+For a few years I've been using Cocoatech's [PathFinder][1] app as a replacement for OSX's Finder app, which falls short at times for my needs.
 
 I initially started using PathFinder in the pre-Mavericks days for tabbed and split-window file browsing. It rocked and I have since come to love some of its many features I occasionally use like batch renaming of files, built-in terminal, and checksum calculation.
 
