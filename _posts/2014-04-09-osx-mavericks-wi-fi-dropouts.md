@@ -12,6 +12,10 @@ tags     :
 - OSX
 ---
 
+**Edit (April 18, 2014):** So it turns out this issue came back with zeal a few days after posting here while I was in the US. A few trips to the Apple store got me trying different things (removing the sleep image in `/var/vm/sleepimage`, system config directory in `/Library/Preferences/SystemConfiguration`, and restarting) all to no or temporary positive effect. Finally they suspected the airport cable was loose because when they used their OS on my hardware (they boot an image on my laptop) they were getting the same *Wifi-no hardware installed* error. They replaced the cable for about USD 30 in about an hour and it seems to be sorted for good now. The next stop was re-installing the OS, which would've been OK but a bit of a hassle to load all my stuff from the latest time machine backup. Fingers crossed this is fixed for good now.
+
+##Original post
+
 For over a week now I've been experiencing some downright annoying behaviour on my Macbook Pro (MBP) after attempting to connect to Wi-Fi when I first arrive at work or home.
 
 Whenever I wake it up from the sleep I put it for the trip the little Wi-Fi fan never fully lights up and fails to connect to a network it had hitherto had no problems remembering and connecting to. WTF?!
