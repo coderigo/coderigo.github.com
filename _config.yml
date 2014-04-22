@@ -23,7 +23,7 @@ comments:
 analytics:
     provider : google 
     google   : 
-        tracking_id : 'UA-18015420-1'
+        tracking_id : 'UA-49613560-1'
         domain      : 'rodrigomartell.com'
 
 categories :
