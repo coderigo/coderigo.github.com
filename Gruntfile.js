@@ -24,7 +24,7 @@ module.exports = function(grunt){
             },
             publish : {
                 options : shellTaskOptions,
-                command : 'rm -rf tags && jekyll build && mv _site/tags tags && git add _posts/ _tags/ img/ && git commit -m "New build" && git push origin'
+                command : 'rm -rf tags && jekyll build && mv _site/tags tags && git add _posts/ tags/ img/ && git commit -m "New build" && git push origin'
             },
             saveDrafts : {
                 options : shellTaskOptions,
