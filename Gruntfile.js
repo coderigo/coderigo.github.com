@@ -24,6 +24,13 @@ module.exports = function(grunt){
                 command : function(filePath){
                     return 'subl -n ./ ' + filePath; // Open SublimeText in new window. Change -a to -n to open in a new window.
                 }
+            },
+            publish : {
+                options : {
+                    stdout : true,
+                    stderr : true
+                },
+                command : 'rm -rf tags && jekyll build && mv _site/tags tags && git add -u && git commit -m "New build" && git push origin'
             }
         },
         'watch' : {
@@ -199,6 +206,15 @@ module.exports = function(grunt){
         if (startServer){
             grunt.task.run('startServer');
         }
+
+    });
+
+    /**
+     * Publish to github
+     */
+    grunt.registerTask('publish', function(){
+
+        grunt.task.run('shell:publish');
 
     });
 };
