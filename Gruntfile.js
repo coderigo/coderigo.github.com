@@ -2,7 +2,10 @@
  * A Grunt file to LiveReload Jekyll during development plus other useful bits
  */
 var snakeCase = require('snake-case');
-
+var shellTaskOptions = {
+    stdout : true,
+    stderr : true
+};
 
 module.exports = function(grunt){
 
@@ -10,33 +13,21 @@ module.exports = function(grunt){
         'pkg' : grunt.file.readJSON('package.json'),
         'shell' : {
             jekyllBuild : {
-                options : {
-                    stdout : true,
-                    stderr : true
-                },
+                options : shellTaskOptions,
                 command : 'jekyll build --drafts'
             },
             openInSublime : {
-                options : {
-                    stdout : true,
-                    stderr : true
-                },
+                options : shellTaskOptions,
                 command : function(filePath){
                     return 'subl -n ./ ' + filePath; // Open SublimeText in new window. Change -a to -n to open in a new window.
                 }
             },
             publish : {
-                options : {
-                    stdout : true,
-                    stderr : true
-                },
+                options : shellTaskOptions,
                 command : 'rm -rf tags && jekyll build && mv _site/tags tags && git add _posts/ _tags/ img/ && git commit -m "New build" && git push origin'
             },
             saveDrafts : {
-                options : {
-                    stdout : true,
-                    stderr : true
-                },
+                options : shellTaskOptions,
                 command : 'git add _drafts/ img/ && git commit -m "New build" && git push origin'
             }
         },
