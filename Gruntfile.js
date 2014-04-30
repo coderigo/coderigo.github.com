@@ -30,7 +30,14 @@ module.exports = function(grunt){
                     stdout : true,
                     stderr : true
                 },
-                command : 'rm -rf tags && jekyll build && mv _site/tags tags && git add -u && git commit -m "New build" && git push origin'
+                command : 'rm -rf tags && jekyll build && mv _site/tags tags && git add _posts/ _tags/ img/ && git commit -m "New build" && git push origin'
+            },
+            saveDrafts : {
+                options : {
+                    stdout : true,
+                    stderr : true
+                },
+                command : 'git add _drafts/ img/ && git commit -m "New build" && git push origin'
             }
         },
         'watch' : {
@@ -215,6 +222,15 @@ module.exports = function(grunt){
     grunt.registerTask('publish', function(){
 
         grunt.task.run('shell:publish');
+
+    });
+
+    /**
+     * Save drafts to github
+     */
+    grunt.registerTask('saveDrafts', function(){
+
+        grunt.task.run('shell:saveDrafts');
 
     });
 };
