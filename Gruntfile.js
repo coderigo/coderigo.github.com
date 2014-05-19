@@ -140,18 +140,28 @@ module.exports = function(grunt){
 
         grunt.config('template.makeDraft', templateConfig);
 
-        grunt.task.run([
+        var taskSequence = [
             'template',
             'makeImgDir:'+templateConfig.options.data.slug,
             'shell:openInSublime:'+templateConfig.postPath
-        ]);
+        ];
 
         if (startServer){
-            grunt.task.run('startServer');
+            taskSequence.push('startServer');
         }
+
+        grunt.task.run(taskSequence);
 
     });
 
+    /**
+     * Remove a draft from the drafts
+     * @param  {string} draftFilePath Path of draft
+     * @return {nothing}              Hopefully a disappeared draft!
+     */
+     grunt.registerTask('nukeDraft', function(draftFilePath){
+        grunt.file.delete(draftFilePath);
+     });
 
     /**
      * Promote a draft to a post
@@ -159,10 +169,12 @@ module.exports = function(grunt){
      */
     grunt.registerTask('promoteDraft', function(draftFilePath, startServer){
 
+        var destinationPath = "_posts/"+grunt.template.today('yyyy-mm-dd')+"-"+draftFilePath.split('/')[1];
+
         grunt.config('replace', {
             'promoteDraft' : {
                 'src'          : [draftFilePath],
-                'overwrite'    : true,
+                'dest'         : destinationPath,
                 'replacements' : [{
                     'from' : /(date\s+:\s+)(.+)/g,
                     'to'   : "$1<%= grunt.template.today('yyyy-mm-dd hh:MM:ss') %>"
@@ -170,16 +182,13 @@ module.exports = function(grunt){
             }
         });
 
-        grunt.task.run(['replace']);
-
-        var destinationPath = "_posts/"+grunt.template.today('yyyy-mm-dd')+"-"+draftFilePath.split('/')[1];
-
-        grunt.file.copy(draftFilePath, destinationPath);
-        grunt.file.delete(draftFilePath);
+        var taskSequence = ['replace', 'nukeDraft:'+draftFilePath];
 
         if (startServer){
-            grunt.task.run('startServer');
+            taskSequence.push('startServer');
         }
+
+        grunt.task.run(taskSequence);
 
     });
 
@@ -194,16 +203,17 @@ module.exports = function(grunt){
 
         grunt.config('template.makePost', templateConfig);
 
-        // Run grunt-template task with above configuration
-        grunt.task.run([
+        var taskSequence = [
             'template',
             'makeImgDir:'+templateConfig.options.data.slug,
             'shell:openInSublime:'+templateConfig.postPath
-        ]);
+        ];
 
         if (startServer){
-            grunt.task.run('startServer');
+            taskSequence.push('startServer');
         }
+
+        grunt.task.run(taskSequence);
 
     });
 
