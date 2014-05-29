@@ -5,7 +5,7 @@ layout   : post
 slug     : why-i-wish-email-would-die
 title    : Why I wish email would die
 summary  : Email still has a place in our lives, but it is often abused and overused. At work, anyway. We can do better if we tried.
-image    : 
+image    : 'why-i-wish-email-would-die/why-i-wish-email-would-die.png'
 category : Tech-stuff # One of Tech-stuff, Learning, Random
 tags     : # common: jekyll, webdev, rcstuff
 - tech
