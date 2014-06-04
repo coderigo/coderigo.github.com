@@ -1,5 +1,5 @@
 markdown : redcarpet
-pygments : true
+highlighter : 'pygments'
 
 exclude : [node_modules, Gruntfile.js, package.json, grunt_templates]
 
