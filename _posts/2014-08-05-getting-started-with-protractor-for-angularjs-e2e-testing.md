@@ -3,7 +3,7 @@ comments : true
 date     : 2014-08-05 12:40:42
 layout   : post
 slug     : getting-started-with-protractor-for-angularjs-e2e-testing
-title    : 'Getting started with protractor for AngularJS e2e testing'
+title    : 'Getting started with protractor (1.0) for AngularJS e2e testing'
 summary  : 'For a while now I have been meaning to try out protractor for end to end testing in AngularJS. I finally set aside some time to give it a shot and in this post I describe what I learned and how I got started.'
 image    : 'getting-started-with-protractor-for-angularjs-e2e-testing/getting-started-with-protractor-for-angularjs-e2e-testing.gif'
 category : Tech-stuff
@@ -15,6 +15,8 @@ tags     :
 ---
 
 !['Protractor for AngularJS e2e testing'](/img/posts/getting-started-with-protractor-for-angularjs-e2e-testing/getting-started-with-protractor-for-angularjs-e2e-testing.png "Protractor for AngularJS e2e testing")
+
+<div class="alert alert-info" role="alert"><strong>Update:</strong> I went to <a href="https://github.com/braidenjudd">Braiden Judd</a>'s excellent AngularJS Melbourne meetup <a href="http://braidenjudd.github.io/presentations/angularjs-meetup-05082014/#1">talk</a> last night on <em>Promises and E2E Testing with Protractor</em> which made me realise my comment below about outdated tutorials and docs was due to the fact that protractor <strong>1.0</strong> is only a recent release (in the last two weeks). This post relates to the latest protractor version : <strong>1.0</strong>.</div>
 
 Manually testing web apps from the user's point of view (end-to-end or e2e for short) sucks. It is time-consuming and tedious, especially so when one needs to verify one's application works on a multitude of browsers. For a simple app the time to set things up for e2e testing may exceed the time it takes to perform the tests manually. When it doesn't, however, automation starts looking good. In the past, time constraints have meant I haven't automated e2e testing and I pledge to be a better citizen henceforth.
 
