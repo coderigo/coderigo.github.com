@@ -38,11 +38,11 @@ The general set up then, as illustrated below, involves writing one's tests usin
 
 !['Protractor to browser interaction.'](/img/posts/getting-started-with-protractor-for-angularjs-e2e-testing/protractor-basic-setup.png "Protractor to browser interaction.")
 
-There is an optional Selenium server between your test and browser's WebDrivers in case one wants to run tests against remote selenium servers. It's worth noting is that if one runs WebDriver on one's own machine it may use the locally installed browser versions, voiding the need to run the Selenium server (see [here](http://www.seleniumhq.org/docs/03_webdriver.jsp#webdriver-and-the-selenium-server)). However, even when running exclusively local protractor seems to only allow one to do away with the standalone Selenium server when running tests against Chrome (see [here](https://github.com/angular/protractor/blob/master/docs/server-setup.md)). I'm not sure I understand why.
+There is an optional Selenium server between your test and browser's WebDrivers in case one wants to run tests against remote selenium servers. It's worth noting is that if one runs WebDriver on one's own machine it may use the locally installed browser versions without needing to run the Selenium server (see [here](http://www.seleniumhq.org/docs/03_webdriver.jsp#webdriver-and-the-selenium-server)). However, even when running exclusively local protractor seems to only allow one to do away with the standalone Selenium server when running tests against Chrome (see [here](https://github.com/angular/protractor/blob/master/docs/server-setup.md)). I'm not sure I understand why.
 
 In the illustration above, notice how one still requires one's application to be served somewhere. This is obvious to me now but my thick brain assumed protractor would spin up my web app for me so I didn't need to do this. Of course, that's dumb but I'm mentioning it so you don't waste 10 minutes scratching your head about this and remember to first make sure your app is served and accessible on some URL.
 
-This gives a brief enough overview I hope to make sense of any errors you may come across. During my research I came made some interesting discoveries about Selenium but exclude them here in favour of focus.
+This gives a brief enough overview I hope to make sense of any errors you may come across. During my research I made some interesting discoveries about Selenium but exclude them here in favour of focus.
 
 
 ## Installation
@@ -60,15 +60,15 @@ Luckily **\#2 and \#3** can be done in one hit since protractor includes the Sel
 
 `npm install -g protractor`
 
-After doing this one should have access to the webdriver manager and should be updated before continuing to make sure we install the latest binaries, ticking off **#4**:
+After doing this one should have access to the webdriver manager which should be updated before continuing to make sure we install the latest binaries, ticking off **#4**:
 
 `webdriver-manager update`
 
 I later hit a snag that I traced back to this step. At the time of writing this step installed version `2.10` of `ChromeDriver` (WebDriver for Chrome). For a reason beyond me I couldn't get protractor to run on Chrome with this version so I had to manually revert to version `2.9`. I'm purposely running one version behind to make it work and others have reported similar issues - see [here](https://github.com/angular/protractor/issues/954#issuecomment-50839897) for a discussion on the issue. You may have to do the same.
 
-That's it, you will now have access to protractor by typing `protractor` on the terminal.
+That's it, you will now have access to protractor by typing `protractor` in the terminal.
 
-For the remainder of the article I'll assume you have your app running on an accessible web server. For simplicity, I'll assume you've made a clone of my [simple app](https://github.com/coderigo/elevator-app), `cd`d into it and run `grunt serve`, which will begin serving the app on `http://localhost:9000/`.
+For the remainder of the post I'll assume you have your app running on an accessible web server. For simplicity, I'll assume you've made a clone of my [simple app](https://github.com/coderigo/elevator-app), `cd`-d into it and run `grunt serve`, which will begin serving the app on `http://localhost:9000/`.
 
 ## Configuring protractor
 
