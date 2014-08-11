@@ -38,11 +38,11 @@ The general set up then, as illustrated below, involves writing one's tests usin
 
 !['Protractor to browser interaction.'](/img/posts/getting-started-with-protractor-for-angularjs-e2e-testing/protractor-basic-setup.png "Protractor to browser interaction.")
 
-There is an optional Selenium server between your test and browser's WebDrivers in case one wants to run tests against remote selenium servers. It's worth noting is that if one runs WebDriver on one's own machine it may use the locally installed browser versions without needing to run the Selenium server (see [here](http://www.seleniumhq.org/docs/03_webdriver.jsp#webdriver-and-the-selenium-server)). However, even when running exclusively local protractor seems to only allow one to do away with the standalone Selenium server when running tests against Chrome (see [here](https://github.com/angular/protractor/blob/master/docs/server-setup.md)). I'm not sure I understand why.
+There is an optional Selenium server between your test and browsers' WebDrivers in case one wants to run tests against remote selenium servers. It's worth noting that if one runs WebDriver on one's own machine it may use the locally installed browser versions without needing to run the Selenium server (see [here](http://www.seleniumhq.org/docs/03_webdriver.jsp#webdriver-and-the-selenium-server)). However, even when running exclusively local protractor seems to only allow one to do away with the standalone Selenium server when running tests against Chrome (see [here](https://github.com/angular/protractor/blob/master/docs/server-setup.md)). I'm not sure I understand why.
 
 In the illustration above, notice how one still requires one's application to be served somewhere. This is obvious to me now but my thick brain assumed protractor would spin up my web app for me so I didn't need to do this. Of course, that's dumb but I'm mentioning it so you don't waste 10 minutes scratching your head about this and remember to first make sure your app is served and accessible on some URL.
 
-This gives a brief enough overview I hope to make sense of any errors you may come across. During my research I made some interesting discoveries about Selenium but exclude them here in favour of focus.
+This brief overview I hope is enough to make sense of any errors you may come across. During my research I made some interesting discoveries about Selenium but exclude them here in favour of focus.
 
 
 ## Installation
@@ -54,15 +54,23 @@ From the image above, we can tell we need four things:
 3. Protractor
 4. WebDrivers for our target browsers
 
-**\#1** I'll assume is already done using `grunt serve` from a Yeoman `generator-angular` scaffolded project. If you like you can clone a [simple app](https://github.com/coderigo/elevator-app) I wrote and play with it. It's not the best app in the world but it will do.
+**\#1** I'll assume is already done using `grunt serve` from a Yeoman `generator-angular` scaffolded project. If you like you can clone a [simple app](https://github.com/coderigo/elevator-app) I wrote and play with it. It's not the best app in the world but it will do:
+
+```bash
+git clone https://github.com/coderigo/elevator-app.git && cd $_
+```
 
 Luckily **\#2 and \#3** can be done in one hit since protractor includes the Selenium standalone server (interacted with via the `webdriver-manager` program) and given it (protractor) is a node program, [installation](https://github.com/angular/protractor/blob/master/docs/tutorial.md) is easy enough through `npm`:
 
-`npm install -g protractor`
+```bash
+npm install -g protractor
+```
 
 After doing this one should have access to the webdriver manager which should be updated before continuing to make sure we install the latest binaries, ticking off **#4**:
 
-`webdriver-manager update`
+```bash
+webdriver-manager update
+```
 
 I later hit a snag that I traced back to this step. At the time of writing this step installed version `2.10` of `ChromeDriver` (WebDriver for Chrome). For a reason beyond me I couldn't get protractor to run on Chrome with this version so I had to manually revert to version `2.9`. I'm purposely running one version behind to make it work and others have reported similar issues - see [here](https://github.com/angular/protractor/issues/954#issuecomment-50839897) for a discussion on the issue. You may have to do the same.
 
@@ -74,7 +82,9 @@ For the remainder of the post I'll assume you have your app running on an access
 
 Typically you'll run protractor by giving it the path to a config file you place somewhere. The `generator-angular` scaffold placed an empty `spec` directory in the root of my app so I decided to create a protractor config file and specs in it.
 
-`touch spec/protractor.conf.js && vi $_`
+```bash
+touch spec/protractor.conf.js && vi $_
+```
 
 This file is a simple node module that gets `require`-d by protractor. Here's what mine looks like:
 
@@ -216,7 +226,9 @@ Notice that the topmost `beforeEach()` calls the `browser.get()` method of the `
 
 With a spec written and our server serving the app on `http://localhost:9000/`, running the tests is as simple as typing into a terminal window:
 
-`protractor spec/protractor.conf.js`
+```bash
+protractor spec/protractor.conf.js
+```
 
 This will show you progress of the tests on all browsers you've configured to run on and you'll see them magically appear on your screen with stuff being clicked and screens. Sugoi!
 
