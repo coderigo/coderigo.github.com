@@ -54,11 +54,7 @@ From the image above, we can tell we need four things:
 3. Protractor
 4. WebDrivers for our target browsers
 
-**\#1** I'll assume is already done using `grunt serve` from a Yeoman `generator-angular` scaffolded project. If you like you can clone a [simple app](https://github.com/coderigo/elevator-app) I wrote and play with it. It's not the best app in the world but it will do:
-
-```bash
-git clone https://github.com/coderigo/elevator-app.git && cd $_
-```
+**\#1** I'll assume is already done using `grunt serve` from a Yeoman `generator-angular` scaffolded project. If you like you can clone a [simple app](https://github.com/coderigo/elevator-app) I wrote and play with it. It's not the best app in the world but it will do.
 
 Luckily **\#2 and \#3** can be done in one hit since protractor includes the Selenium standalone server (interacted with via the `webdriver-manager` program) and given it (protractor) is a node program, [installation](https://github.com/angular/protractor/blob/master/docs/tutorial.md) is easy enough through `npm`:
 
@@ -76,13 +72,21 @@ I later hit a snag that I traced back to this step. At the time of writing this 
 
 That's it, you will now have access to protractor by typing `protractor` in the terminal.
 
-For the remainder of the post I'll assume you have your app running on an accessible web server. For simplicity, I'll assume you've made a clone of my [simple app](https://github.com/coderigo/elevator-app), `cd`-d into it and run `grunt serve`, which will begin serving the app on `http://localhost:9000/`.
+For the remainder of the post I'll assume you have your app running on an accessible web server. For simplicity, I'll assume you've made a clone of my [simple app](https://github.com/coderigo/elevator-app), `cd`-d into it and run `grunt serve`, which will begin serving the app on `http://localhost:9000/`:
+
+```bash
+[~]
+git clone https://github.com/coderigo/elevator-app.git && cd $_
+[~/elevator-app/]
+grunt serve
+```
 
 ## Configuring protractor
 
 Typically you'll run protractor by giving it the path to a config file you place somewhere. The `generator-angular` scaffold placed an empty `spec` directory in the root of my app so I decided to create a protractor config file and specs in it.
 
 ```bash
+[~/elevator-app/]
 touch spec/protractor.conf.js && vi $_
 ```
 
@@ -227,6 +231,7 @@ Notice that the topmost `beforeEach()` calls the `browser.get()` method of the `
 With a spec written and our server serving the app on `http://localhost:9000/`, running the tests is as simple as typing into a terminal window:
 
 ```bash
+[~/elevator-app/]
 protractor spec/protractor.conf.js
 ```
 
