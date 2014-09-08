@@ -25,7 +25,7 @@ Containers can share the host OSs resources like CPU or files. The images used t
 
 All this confused me at first, which is why I needed a project to take on to understand it better (see later in this post). However, as I started to get it I found it helpful to think that docker is to application environments what [git](http://git-scm.com/) is to source code.
 
-# The main components and terminology
+# Main components and terminology
 
 Docker is targeted at Linux environments but works on other OSes via a virtual machine. Docker runs a **daeomn** (I've also read it referred to as the engine) on the host OS to manage containers created from images. Because I run docker locally on OS X, I followed their intallation [instructions](http://docs.docker.com/installation/mac/), which essentially set up a lightweight Linux VM ontop of which docker is run. This is managed by a little app called [`boot2docker`](https://github.com/boot2docker/boot2docker) which takes care of managing the VM and the **daemon**.
 
@@ -36,7 +36,7 @@ To get started, obviously one needs to obtain an image from which one or more co
 
 Docker's Github counterpart is the [Dockerhub](https://hub.docker.com/) where one can increasingly find images for seemingly any application and environment under the sun - all free. Image repositories on docker typically link to Github accounts which contain little else other than a Dockerfile which when edited and updated on Github, trigger a Dockerhub rebuild of the image made instantly available. Smart.
 
-# The basic commands
+# Basic commands
 
 I'm no docker expert and the documentation will outline far more than I understand and can list here. However, I found just a handful of commands allowed me to get what I wanted to get done with little effort, which I list below:
 
