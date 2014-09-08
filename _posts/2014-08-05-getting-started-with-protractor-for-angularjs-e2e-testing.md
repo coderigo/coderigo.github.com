@@ -5,7 +5,7 @@ layout   : post
 slug     : getting-started-with-protractor-for-angularjs-e2e-testing
 title    : 'Getting started with protractor (1.0) for AngularJS e2e testing'
 summary  : 'For a while now I have been meaning to try out protractor for end to end testing in AngularJS. I finally set aside some time to give it a shot and in this post I describe what I learned and how I got started.'
-image    : 'getting-started-with-protractor-for-angularjs-e2e-testing/getting-started-with-protractor-for-angularjs-e2e-testing.gif'
+image    : 'getting-started-with-protractor-for-angularjs-e2e-testing/getting-started-with-protractor-for-angularjs-e2e-testing.png'
 category : Tech-stuff
 tags     : 
 - webdev
