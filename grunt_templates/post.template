@@ -3,8 +3,8 @@ comments : true
 date     : <%= grunt.template.today('yyyy-mm-dd hh:MM:ss') %>
 layout   : post
 slug     : <%= slug %>
-title    : "<%= title %>"
-summary  : 
+title    : '<%= title %>'
+summary  : ''
 image    : '<%= slug %>/<%= slug %>.png'
 category : # One of Tech-stuff, Learning, Random
 tags     : # common: jekyll, webdev, rcstuff
