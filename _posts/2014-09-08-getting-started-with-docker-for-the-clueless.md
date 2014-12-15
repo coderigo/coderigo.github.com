@@ -159,7 +159,7 @@ Once it's all done, one can check the image has been created and docker knows ab
 Now, one can create a container based on that image with:
 
 ```bash
-docker run -p 192.168.59.103:49159:9000 --name="my-image-container" --hostname="my-image-container" -i -t myf
+docker run -p 192.168.59.103:49159:9000 --name="my-image-container" --hostname="my-image-container" -i -t my-image
 ```
 
 That will start a new interactive terminal session, into which one can run the application it hosts with:
@@ -179,7 +179,7 @@ I excluded from this how to push one's images to dockerhub and how to hook them 
 I'm pretty excited about docker and its uses. I've worked on past projects where something like this would have not only helped during development but during deployment of web applications. I've also recently seemlessly implemented a [discourse]() instance using their recommended docker [installation](https://github.com/discourse/discourse_docker) on a [digital ocean](https://www.digitalocean.com/) VPS. It worked in minutes and all updates are managed by docker without issue.
 
 I'm also pretty excited about docker's potential role in helping ease the pain of reproducing published works as argued in [this post](http://melissagymrek.com/science/2014/08/29/docker-reproducible-research.html). I plan on seriously considering its use in my own research.
-
+m
 I recently read about [Kitematic](https://kitematic.com/), which looks like a Mac GUI-based way to manage and create docker images. I haven't given it a whirl yet but plan to soon as it looks great.
 
 There's a whole lot more one can do with docker that I am yet to learn or need and there are some concerns about its security floating around too. I'm sure these will be attacked by the community as it gains popularity. In the meantime I'm very impressed with how easy it makes it for the common tinkerer like me to containerise environments and share them and I look forward to using it on more of my projects.
