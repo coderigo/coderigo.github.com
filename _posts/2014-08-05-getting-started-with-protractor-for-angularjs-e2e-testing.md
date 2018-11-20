@@ -28,7 +28,7 @@ This post first gives a summary of how I understand protractor to work with the 
 
 ## The main cogs
 
-Browser automation projects have been kicking around for a while but one that had stuck to mind was [Selenium](http://www.seleniumhq.org/). I hadn't used it before but knew roughly what it could do. In their words, Selenium *"automates browsers. That's it!"*. It is more of a tool that can be put to use in different jobs and that's exactly what protractor does : put Selenium (the WebDriver tool to be specific) to work to e2e test one's Angular app.
+Browser automation projects have been kicking around for a while but one that had stuck to mind was [Selenium](http://www.seleniumhq.org/) (a good resource to learn more about it is at [guru99's selenium tutorial]( https://www.guru99.com/selenium-tutorial.html). I hadn't used it before but knew roughly what it could do. In their words, Selenium *"automates browsers. That's it!"*. It is more of a tool that can be put to use in different jobs and that's exactly what protractor does : put Selenium (the WebDriver tool to be specific) to work to e2e test one's Angular app.
 
 Selenium isn't just one tool but a set of tools as their project [intro doc](http://www.seleniumhq.org/docs/01_introducing_selenium.jsp) states. These tools apparently had some shortcomings, especially when it came to remote controlling the browser. That one in particular sparked the development of a separate project at Google, [WebDriver](http://docs.seleniumhq.org/projects/webdriver/), which had a great API amongst other benefits and which was later married to Selenium in captain planet-like fashion to yield a tool stronger than the sum of its parts. 
 
